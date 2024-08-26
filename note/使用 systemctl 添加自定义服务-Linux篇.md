@@ -9,6 +9,7 @@
 ## 配置文件说明：
 
 - ini 代码解读复制代码[UNIT]
+
 ```shell
 #服务描述
 Description=Media wanager Service
@@ -33,6 +34,7 @@ WantedBy=multi-user.target
 ```
 
 - ini 代码解读复制代码
+
 ```shell
 [Unit] 区块：启动顺序与依赖关系
 
@@ -85,8 +87,32 @@ Systemd 有默认的启动 Target。
 
 ## 常用命令
 
-markdown 代码解读复制代码重载系统服务：systemctl daemon-reload
-设置开机启动：systemctl enable *.service
-启动服务：systemctl start *.service
-停止服务：systemctl stop *.service
-重启服务：systemctl reload *.service
+```shell
+# 开机启动
+systemctl enable mysqld
+
+# 关闭开机启动
+systemctl disable mysqld
+
+# 启动服务
+systemctl start mysqld
+
+# 停止服务
+systemctl stop mysqld
+
+# 重启服务
+systemctl restart mysqld
+
+# 查看服务状态
+systemctl status mysqld
+systemctl is-active sshd.service
+
+# 结束服务进程(服务无法停止时)
+systemctl kill mysqld
+
+#查看全部log
+journalctl -u service-name.service
+
+#查看最新的10行log
+journalctl -u service-name.service | tail -n 10
+```
