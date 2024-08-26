@@ -90,8 +90,3 @@ markdown 代码解读复制代码重载系统服务：systemctl daemon-reload
 启动服务：systemctl start *.service
 停止服务：systemctl stop *.service
 重启服务：systemctl reload *.service
-
-作者：CHQ
-链接：https://juejin.cn/post/6970553258133684260
-来源：稀土掘金
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
